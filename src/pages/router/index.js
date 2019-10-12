@@ -9,7 +9,7 @@ export default [
       return _import("discover/index");
     },
     meta: {
-      title: "商家分享"
+      title: "发现"
     }
   }
 ];
