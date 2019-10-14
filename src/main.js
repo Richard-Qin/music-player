@@ -4,6 +4,7 @@ import router from "./router/index";
 import store from "./store/index";
 import axios from "./http/http";
 import * as $api from "./http/api";
+import "./assets/style/index.scss";
 
 Vue.config.productionTip = false;
 /* 网络请求接口 */
