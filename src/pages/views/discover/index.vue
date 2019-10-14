@@ -1,15 +1,14 @@
 <template>
   <div>
-    12312
-    <van-button type="default">默认按钮</van-button>
-    <van-button type="danger">危险按钮</van-button>
+    发现
   </div>
 </template>
 <script>
-import { Button } from 'vant'
+// import navBar from "@/components/common/nav-bar";
+import { Button } from "vant";
 export default {
   components: {
     [Button.name]: Button
   }
-}
+};
 </script>

@@ -4,12 +4,45 @@ let _import = index => {
 export default [
   {
     path: "/",
-    name: "Discover",
+    name: "Nav",
+    redirect: "/find",
     component() {
-      return _import("discover/index");
+      return _import("nav/index");
     },
     meta: {
-      title: "发现"
+      title: "导航"
+    },
+    children: [
+      {
+        path: "/find",
+        name: "Discover",
+        component() {
+          return _import("discover/index");
+        },
+        meta: {
+          title: "发现"
+        }
+      },
+      {
+        path: "/home",
+        name: "Home",
+        component() {
+          return _import("home/index");
+        },
+        meta: {
+          title: "我的"
+        }
+      }
+    ]
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component() {
+      return _import("login/index");
+    },
+    meta: {
+      title: "我的"
     }
   }
 ];
