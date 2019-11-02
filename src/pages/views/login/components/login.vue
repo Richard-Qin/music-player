@@ -1,10 +1,8 @@
 <template>
-  <div class="nav-bar">
-    
-  </div>
+  <div class="nav-bar"></div>
 </template>
 <script>
-import { Tabbar, TabbarItem } from 'vant'
+import { Tabbar, TabbarItem } from "vant";
 export default {
   components: {
     [Tabbar.name]: Tabbar,
@@ -13,9 +11,9 @@ export default {
   data() {
     return {
       active: 0
-    }
+    };
   }
-}
+};
 </script>
 <style lang="scss">
 .nav-bar {

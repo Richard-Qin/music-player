@@ -20,7 +20,11 @@
       </van-tabbar-item>
     </van-tabbar>
     <!-- 登录 -->
-    <van-popup :style="{width:'80%' }" position="left" v-model="isLogin">
+    <van-popup
+      :style="{ width: '80%', height: '100%' }"
+      position="left"
+      v-model="isLogin"
+    >
       <login></login>
     </van-popup>
     <keep-alive>
@@ -29,8 +33,8 @@
   </div>
 </template>
 <script>
-import { Tabbar, TabbarItem, Popup } from 'vant'
-import Login from '@/pages/views/login/index'
+import { Tabbar, TabbarItem, Popup } from "vant";
+import Login from "@/pages/views/login/index";
 export default {
   components: {
     [Tabbar.name]: Tabbar,
@@ -41,13 +45,11 @@ export default {
   data() {
     return {
       active: 0,
-      isLogin:false
-    }
+      isLogin: false
+    };
   },
-  methods: {
-  
-  }
-}
+  methods: {}
+};
 </script>
 <style lang="scss">
 .nav-bar {
