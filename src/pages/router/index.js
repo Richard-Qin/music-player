@@ -39,10 +39,10 @@ export default [
     path: "/login",
     name: "Login",
     component() {
-      return _import("login/index");
+      return _import("login/components/login");
     },
     meta: {
-      title: "我的"
+      title: "登录"
     }
   }
 ];

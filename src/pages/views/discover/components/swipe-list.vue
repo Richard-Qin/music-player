@@ -1,8 +1,8 @@
 <template>
   <div>
     <van-swipe :autoplay="3000">
-      <van-swipe-item :key="index" v-for="(image, index) in images">
-        <img v-lazy="image" />
+      <van-swipe-item :key="index" v-for="(image, index) in imageList">
+        <img :src="image" />
       </van-swipe-item>
     </van-swipe>
   </div>
@@ -21,13 +21,24 @@ export default {
   data() {
     return {
       value: '',
-      images: [
+      imageList: [
         'https://img.yzcdn.cn/vant/apple-1.jpg',
         'https://img.yzcdn.cn/vant/apple-2.jpg'
       ]
     }
   },
   computed: {},
-  methods: {}
+  mounted() {
+    this.getTopHotMusic()
+  },
+  methods: {
+    async getTopHotMusic() {
+      let res = await this.$api.getTopHotMusic()
+      // console.log(res)
+      if (res) {
+        // console.log(11111111)
+      }
+    }
+  }
 }
 </script>
