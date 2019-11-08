@@ -32,13 +32,7 @@ export default {
     this.getTopHotMusic()
   },
   methods: {
-    async getTopHotMusic() {
-      let res = await this.$api.getTopHotMusic()
-      // console.log(res)
-      if (res) {
-        // console.log(11111111)
-      }
-    }
+
   }
 }
 </script>

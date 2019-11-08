@@ -13,6 +13,11 @@
         >立即登录</van-button
       >
     </div>
+    <!-- 已登录 -->
+    <div>
+      <img src="" alt="">
+      <span></span>
+    </div>
   </div>
 </template>
 <script>

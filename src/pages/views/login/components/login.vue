@@ -14,7 +14,9 @@
     <!-- 手机号登录第三步 -->
     <div class="three">
       <div>验证码已发送至</div>
-      <van-number-keyboard :show="showKeyboard" @blur="showKeyboard = false" @delete="onDelete" @input="onInput" />
+      <div>{{phone}}</div>
+      <van-field placeholder="请输入手机号" type="number" v-model="captcha"></van-field>
+      <van-button @click="finishLogin">完成</van-button>
     </div>
   </div>
 </template>
@@ -30,7 +32,7 @@ export default {
     return {
       isClickPhone: 1,
       phone: null,
-      showKeyboard: true
+      captcha: null
     }
   },
   mounted() {},
@@ -43,13 +45,24 @@ export default {
       let params = {
         phone: this.phone
       }
-      let res = await this.$api.getSendCode(params)
+      // let res = await this.$api.getSendCode(params)
     },
     onInput(key) {
       this.value = (this.value + key).slice(0, 6)
     },
     onDelete() {
       this.value = this.value.slice(0, this.value.length - 1)
+    },
+    /*完成登录 */
+    async finishLogin(){
+      let params = {
+        phone:this.phone,
+        captcha:this.captcha
+      }
+      let res = await this.$api.getVerifyCaptcha(params)
+      if(res){
+
+      }
     }
   }
 }
