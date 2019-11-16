@@ -18,8 +18,6 @@ module.exports = {
       .set("@utils", resolve("src/utils/index.js"));
   },
   devServer: {
-    host: "0.0.0.0",
-    open: true,
-    proxy: "http://140.143.128.100:3000"
+    proxy: "http://localhost:3000"
   }
 };

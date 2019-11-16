@@ -13,3 +13,12 @@ export const getSendCode = params => {
 export const getVerifyCaptcha = params => {
   return $http.get(`/captcha/sent`, params);
 };
+
+/**
+ * 发现页
+ * 头部轮播图
+ */
+
+export const getBanner = params => {
+  return $http.get(`/banner`, params);
+};

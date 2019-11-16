@@ -1,14 +1,13 @@
 <template>
-  <div>
+  <div class="swipe-list">
     <van-swipe :autoplay="3000">
-      <van-swipe-item :key="index" v-for="(image, index) in imageList">
-        <img :src="image" />
+      <van-swipe-item :key="index" v-for="(item, index) in banners">
+        <img :src="item.pic" class="imgs" />
       </van-swipe-item>
     </van-swipe>
   </div>
 </template>
 <script>
-// import navBar from "@/components/common/nav-bar";
 import { Button, Field, Swipe, SwipeItem, Lazyload } from 'vant'
 export default {
   components: {
@@ -21,18 +20,33 @@ export default {
   data() {
     return {
       value: '',
-      imageList: [
-        'https://img.yzcdn.cn/vant/apple-1.jpg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg'
-      ]
+      banners: []
     }
   },
   computed: {},
   mounted() {
-    this.getTopHotMusic()
+    this.getBanner()
   },
   methods: {
-
+    async getBanner() {
+      let params = {
+        type: 1
+      }
+      let res = await this.$api.getBanner(params)
+      if (res) {
+        this.banners = res.banners
+      }
+    }
   }
 }
 </script>
+<style lang="scss" scoped>
+.swipe-list {
+  padding: 10px;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+  }
+}
+</style>
