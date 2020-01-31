@@ -1,16 +1,36 @@
 /* 登录 */
-.login{
+.login {}
 
-}
 /* 登录头部 */
-.login-top{
+.login-top {
   background: rgba(204, 204, 204, 0.3);
-  .no-login{
+
+  .no-login {
     text-align: center;
     padding: 60px;
-    div{
+
+    div {
       font-size: 26px;
       color: rgba(0, 0, 0, 0.4);
     }
+
+    .login-btn {
+      padding: 0 50px;
+      border: 1px rgba(0, 0, 0, 0.4) solid;
+      color: rgba(0, 0, 0, 0.4);
+      margin: 20px 0;
+    }
+  }
+}
+
+/* 登录内容 */
+.login-content {
+  .titel {
+    height: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
   }
 }
