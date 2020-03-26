@@ -3,7 +3,7 @@ import App from "./App.vue";
 import router from "./router/index";
 import store from "./store/index";
 import axios from "./http/http";
-import * as $api from "./http/api";
+import $api from "@/http/api";
 import "./assets/style/index.scss";
 import * as $transformer from "@/utils/transformer.js";
 import directives from "./directives/index";

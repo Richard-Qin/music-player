@@ -8,7 +8,7 @@
   </div>
 </template>
 <script>
-import { Button, Field, Swipe, SwipeItem, Lazyload } from 'vant'
+import { Button, Field, Swipe, SwipeItem, Lazyload } from "vant";
 export default {
   components: {
     [Button.name]: Button,
@@ -19,26 +19,26 @@ export default {
   },
   data() {
     return {
-      value: '',
+      value: "",
       banners: []
-    }
+    };
   },
   computed: {},
   mounted() {
-    this.getBanner()
+    this.getBanner();
   },
   methods: {
     async getBanner() {
       let params = {
         type: 1
-      }
-      let res = await this.$api.getBanner(params)
+      };
+      let res = await this.$api.getBanner(params);
       if (res) {
-        this.banners = res.banners
+        this.banners = res.banners;
       }
     }
   }
-}
+};
 </script>
 <style lang="scss" scoped>
 .swipe-list {

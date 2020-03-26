@@ -44,5 +44,14 @@ export default [
     meta: {
       title: "登录"
     }
+  },
+  {
+    path: "/recommend-detail",
+    name: "RecommendDetail",
+    component: () =>
+      import("../views/discover/components/recommend-detail.vue"),
+    meta: {
+      title: "登录"
+    }
   }
 ];

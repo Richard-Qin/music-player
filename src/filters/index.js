@@ -87,62 +87,20 @@ filter.fractionalPart = value => {
     return att[1] ? att[1] : "00";
   }
 };
-// 订单状态
-filter.getOrderStatusFilter = value => {
-  switch (value) {
-    case 1:
-      value = "待支付";
-      break;
-    case 2:
-      value = "已支付";
-      break;
-    case 4:
-      value = "退款中";
-      break;
-    case 5:
-      value = "已退款";
-      break;
-    case 7:
-      value = "已核销";
-      break;
-    case 9:
-      value = "已取消";
-      break;
+
+/* 数字转化为带单位 */
+filter.playCountFilter = value => {
+  if (!value) {
+    return "";
+  } else if (value > 100000000) {
+    value = (value / 100000000).toFixed(1) + "亿";
+    return value;
+  } else if (value > 100000) {
+    value = Math.floor(value / 10000) + "万";
+    return value;
   }
-  return value;
 };
-// 支付方式
-filter.getPayTypeFilter = value => {
-  switch (value) {
-    case 0:
-      value = "现金";
-      break;
-    case 1:
-      value = "微信";
-      break;
-    case 2:
-      value = "支付宝";
-      break;
-    case 3:
-      value = "微信";
-      break;
-    case 4:
-      value = "支付宝";
-      break;
-    case 5:
-      value = "到店支付";
-      break;
-    case 6:
-      value = "货到付款";
-      break;
-    case 7:
-      value = "翼支付";
-      break;
-    default:
-      value = "--";
-  }
-  return value;
-};
+
 export default {
   install(Vue) {
     for (let key in filter) {

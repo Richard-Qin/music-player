@@ -51,8 +51,9 @@ export default {
   methods: {}
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .nav-bar {
+  height: 100%;
   $size: 34px;
   .iconsousuo,
   .icongengduo {

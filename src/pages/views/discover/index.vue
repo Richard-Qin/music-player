@@ -3,13 +3,15 @@
     <!-- 轮播图 -->
     <swipe-list></swipe-list>
     <!-- 菜单 -->
-    <menu></menu>
+    <find-menu></find-menu>
+    <recommend-music></recommend-music>
   </div>
 </template>
 <script>
-import { Button, Field, Swipe, SwipeItem } from 'vant'
-import Menu from "./components/menu";
-import SwipeList from './components/swipe-list'
+import { Button, Field, Swipe, SwipeItem } from "vant";
+import FindMenu from "./components/find-menu";
+import SwipeList from "./components/swipe-list";
+import RecommendMusic from "./components/recommend-music";
 export default {
   components: {
     [Button.name]: Button,
@@ -17,14 +19,18 @@ export default {
     [Swipe.name]: Swipe,
     [SwipeItem.name]: SwipeItem,
     SwipeList,
-    Menu
+    FindMenu,
+    RecommendMusic
   },
   data() {
     return {
-      value: ''
-    }
+      value: ""
+    };
   },
   computed: {},
+  mounted() {
+    console.log([] == ![]);
+  },
   methods: {}
-}
+};
 </script>
